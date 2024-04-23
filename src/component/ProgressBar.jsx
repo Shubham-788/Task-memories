@@ -21,21 +21,20 @@ const ProgressBar = ({ time, currentImageIndex }) => {
 
   return (
     <div
-      style={{
-        position: "absolute",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%, -50%)",
-        width: "50vw", // Set width to half of the screen width
-        backgroundColor: isHovered ? "rgba(30, 30, 30, 0.8)" : "rgba(0, 0, 0, 0.5)",
-        padding: "10px",
-        borderRadius: "15px",
-        transition: "background-color 0.3s ease-in-out, transform 0.3s ease-in-out",
-        transform: isHovered ? "scale(1.05) translate(-50%, -50%)" : "scale(1) translate(-50%, -50%)",
-      }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    style={{
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: isHovered ? "scale(1.05) translate(-50%, -50%)" : "scale(1) translate(-50%, -50%)",
+      width: "50vw", // Set width to half of the screen width
+      backgroundColor: isHovered ? "rgba(30, 30, 30, 0.8)" : "rgba(0, 0, 0, 0.5)",
+      padding: "10px",
+      borderRadius: "15px",
+      transition: "background-color 0.3s ease-in-out, transform 0.3s ease-in-out",
+    }}
+    onMouseEnter={() => setIsHovered(true)}
+    onMouseLeave={() => setIsHovered(false)}
+  >
       <div
         style={{
           // Styles for the progress bar

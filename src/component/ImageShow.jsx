@@ -55,6 +55,7 @@ const ImageShow = ({ imageData, currentImageIndex, handleClick, time }) => {
               zIndex: 1,
               width: '100%',
               height: '100%',
+
             }}
           />
 
