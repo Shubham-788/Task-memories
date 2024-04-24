@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import ReactPlayer from "react-player";
 import ImageShow from "./ImageShow";
 import BackgroundImage from "./BackgroundImage";
 import imageData from "./images_.json";
@@ -10,6 +9,7 @@ const ImageComponent = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const intervalIdRef = useRef(null);
   const [time, setTime] = useState(10);
+  const audioRef = useRef(new Audio("./song.mp3"));
 
   useEffect(() => {
     // Start interval to change images
@@ -19,6 +19,8 @@ const ImageComponent = () => {
         if (nextIndex >= imageData.length) {
           clearInterval(intervalIdRef.current);
           setTime(10); // Reset time only if it's the last image
+          // Pause audio when images finish loading
+          audioRef.current.pause();
         }
         return nextIndex;
       });
@@ -86,13 +88,8 @@ const ImageComponent = () => {
           >
             <ProgressBar time={time} currentImageIndex={currentImageIndex} />
           </div>
-          <ReactPlayer
-            url="./song.mp3"
-            playing
-            controls
-            onError={(error) => console.error("Error playing audio:", error)}
-          />
-
+          {/* Play audio when images start loading */}
+          <audio ref={audioRef} autoPlay controls onError={(e) => console.error("Error playing audio:", e)} />
           <BackgroundImage imageUrl={imageData[currentImageIndex].url} />
           <ImageShow
             imageData={imageData}

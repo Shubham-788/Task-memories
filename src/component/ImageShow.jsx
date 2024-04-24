@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 
-const ImageShow = ({ imageData, currentImageIndex, handleClick, time }) => {
+const ImageShow = ({ imageData, currentImageIndex, handleClick }) => {
   // Define the spring animation for zoom effect
   const [zoomAnimation, setZoomAnimation] = useSpring(() => ({
     from: { transform: "scale(1)" },
