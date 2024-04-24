@@ -9,7 +9,6 @@ const ImageComponent = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const intervalIdRef = useRef(null);
   const [time, setTime] = useState(10);
-  const audioRef = useRef(new Audio("./song.mp3"));
 
   useEffect(() => {
     // Start interval to change images
@@ -20,7 +19,6 @@ const ImageComponent = () => {
           clearInterval(intervalIdRef.current);
           setTime(10); // Reset time only if it's the last image
           // Pause audio when images finish loading
-          audioRef.current.pause();
         }
         return nextIndex;
       });
@@ -89,7 +87,7 @@ const ImageComponent = () => {
             <ProgressBar time={time} currentImageIndex={currentImageIndex} />
           </div>
           {/* Play audio when images start loading */}
-          <audio ref={audioRef} autoPlay controls onError={(e) => console.error("Error playing audio:", e)} />
+          <audio src='song.mp3' autoPlay onError={(e) => console.error("Error playing audio:", e)} />
           <BackgroundImage imageUrl={imageData[currentImageIndex].url} />
           <ImageShow
             imageData={imageData}
