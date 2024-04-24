@@ -76,7 +76,7 @@ const ImageComponent = () => {
           {/* Progress bar */}
           <div
             style={{
-              position: "absolute",
+              position: "fixed",
               top: 0,
               left: 0,
               marginTop: "50px",

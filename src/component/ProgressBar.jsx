@@ -38,13 +38,12 @@ const ProgressBar = ({ time, currentImageIndex }) => {
       <div
         style={{
           // Styles for the progress bar
-          position:'absolute',
-          top:0,
-          left:0,
+          position:'relative',
+          // top:0,
+          // left:0,
           width: "100%",
           height: "3px",
           backgroundColor: "lightgray",
-          position: "relative",
         }}
       >
         <animated.div
