@@ -7,7 +7,7 @@ const ButtonAni = ({ onClick }) => {
       style={{
         // Button styles including padding, background color, text color, border, border radius, cursor, and transitions
         padding: '10px 20px',
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        backgroundColor: 'rgba(100, 100, 100, 0.5)',
         color: 'white',
         border: 'none',
         borderRadius: '5px',
@@ -23,7 +23,7 @@ const ButtonAni = ({ onClick }) => {
       }}
       // Event handler for mouse leave
       onMouseLeave={(e) => {
-        e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // Restore original background color on mouse leave
+        e.target.style.backgroundColor = 'rgba(100, 100, 100, 0.5)'; // Restore original background color on mouse leave
         e.target.style.transform = 'scale(1)'; // Restore original scale on mouse leave
       }}
       // Event handler for mouse down
