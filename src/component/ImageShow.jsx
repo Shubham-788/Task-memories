@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useSpring, animated } from "react-spring";
-import ProgressBar from "./ProgressBar";
 
 const ImageShow = ({ imageData, currentImageIndex, handleClick, time }) => {
   // Define the spring animation for zoom effect
